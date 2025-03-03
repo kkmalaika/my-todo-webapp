@@ -1,6 +1,6 @@
 import FreeSimpleGUI  as sg
 import functions
-#from course.App1.cli.py import new_todo
+#from course.App1.cli.py import new_todo                                                                      ²  
 
 label = sg.Text("Veuillez saisir une tâche")
 input_box = sg.InputText(tooltip="Saisir une tâche", key="todo")
@@ -8,10 +8,17 @@ add_button = sg.Button("Ajouter")
 list_box = sg.Listbox(values=functions.get_todos(), key='todos',
                       enable_events=True, size=[45, 10])
 edit_button = sg.Button("Modifier")
+complete_button = sg.Button("Faite")
+exit_button = sg.Button("Sortir")
+
+#layout=[[label], [input_box, add_button], [list_box, edit_button]]
 
 window = sg.Window('Bonjour Kelly, Voici vos tâches du jour',
-                   layout=[[label], [input_box, add_button], [list_box, edit_button]],
-                   font=('Helvetica', 20))
+                   layout=[[label],
+                           [input_box, add_button],
+                           [list_box, edit_button, complete_button],
+                           [exit_button]],
+                   font=('Helvetica', 10 ))
 
 while True:
     event, values = window.read()
@@ -32,10 +39,20 @@ while True:
             todos[index] = new_todo
             functions.write_todos(todos)
             window['todos'].update(values=todos)
+        case "Faite":
+            todo_to_complete = values['todos'][0]
+            todos = functions.get_todos()
+            todos.remove(todo_to_complete)
+            functions.write_todos(todos)
+            window['todos'].update(values=todos)
+            window['todo'].update(value='')
+        case "Sortir":
+            break
         case 'todos':
             window['todo'].update(value=values['todos'][0])
         case sg.WIN_CLOSED:
-            break
+            exit()
+print("bye")
 
 window.close()
 
