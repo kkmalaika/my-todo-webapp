@@ -1,4 +1,4 @@
-FILEPATH = "fichiers/Ma_Todo_Quotidienne.txt"
+FILEPATH = "Ma_Todo_Quotidienne.txt"
 def get_todos(filepath = FILEPATH):
     """ouvrir ma todo
      montrer la liste"""

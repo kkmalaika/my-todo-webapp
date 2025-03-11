@@ -1,14 +1,23 @@
 import FreeSimpleGUI  as sg
 import functions
 import time
+import os
+
+if not os.path.exists("Ma_Todo_Quotidienne.txt"):
+    with open("Ma_Todo_Quotidienne.txt", "w") as file:
+        pass
+
 #from course.App1.cli.py import new_todo                                                                      ²  
 
-sg.theme("LightBrown6")
+#sg.theme("Purple")
+sg.theme("DarkTeal")
 
 clock = sg.Text('', key='clock')
 label = sg.Text("Veuillez saisir une tâche")
 input_box = sg.InputText(tooltip="Saisir une tâche", key="todo")
 add_button = sg.Button("Ajouter")
+#add_button = sg.Button(size=10, image_source="Ajouter.PNG", mouseover_colors="LightBlue2",
+ #                      tooltip="Ajouter tâche", key="Ajouter")
 list_box = sg.Listbox(values=functions.get_todos(), key='todos',
                       enable_events=True, size=[50, 16])
 edit_button = sg.Button("Modifier")
@@ -52,9 +61,9 @@ while True:
                 todo_to_complete = values['todos'][0]
                 todos = functions.get_todos()
                 todos.remove(todo_to_complete)
+
                 functions.write_todos(todos)
                 window['todos'].update(values=todos)
-                window['todo'].update(value='')
             except IndexError:
                 sg.popup("Selectionner d'abord un élément de la liste", font=('Helvetica', 10 ))
         case "Sortir":

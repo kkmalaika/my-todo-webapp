@@ -1,6 +1,4 @@
-# from functions import get_todos, write_todos
-
-from course.App1 import functions
+import functions
 import time
 
 now = time.strftime("%d %b, %Y %H:%M:%S")
