@@ -29,5 +29,3 @@ st.text_input(label="Ajouter une tâche : ", placeholder="Saisissez une tâche i
               on_change=add_todo, key='new_todo')
 
 print("Hello")
-
-st.session_state
