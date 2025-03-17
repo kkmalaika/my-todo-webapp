@@ -4,7 +4,7 @@ echo "\
 [general]\n\
 email = \"kkmalaika@yahoo.com\"\n\
 " > ~/.streamlit/credentials.toml
-
+#
 echo "\
 [server]\n\
 headless = true\n\
