@@ -1,8 +1,5 @@
 import streamlit as st
-from streamlit import session_state, checkbox
-from streamlit.runtime.scriptrunner import add_script_run_ctx, get_script_run_ctx
 import functions
-import os
 
 todos = functions.get_todos()
 def add_todo():
