@@ -8,7 +8,7 @@ def add_todo():
     functions.write_todos(todos)
 
 
-st.title("Ma 1ère application : Ma Todo list")
+st.title("Ma 1ère application :Ma Todo list")
 st.subheader("Ceci est ma liste de tâches pour aujourd'hui")
 st.write("Hotep :-)")
 
