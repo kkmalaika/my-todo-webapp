@@ -22,8 +22,7 @@ def add_todo():
 
 st.title("Ma 1ère application : Ma Todo list")
 st.subheader("Ceci est ma liste de tâches pour aujourd'hui")
-accueil =
-"""-----------------------------
+accueil = """-----------------------------
 ---        Hotep :-)         ---
 -----------------------------"""
 st.write(accueil)
