@@ -25,7 +25,7 @@ st.subheader("Ceci est ma liste de tâches pour aujourd'hui")
 accueil = """********************************
 **Hotep :-)** \n
 J'ai créé cette application pour être mieux organisée. \n
-Qu'en penses-tu? \n
+Its a beautiful day to be alive and grateful \n
 ********************************"""
 st.write(accueil)
 
